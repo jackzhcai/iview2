@@ -4,7 +4,7 @@
     </a>
 </p>
 
-# iView
+# 基于 iView 2.14.3 镜像
 [![](https://img.shields.io/travis/iview/iview.svg?style=flat-square)](https://travis-ci.org/iview/iview)
 [![iView](https://img.shields.io/npm/v/iview.svg?style=flat-square)](https://www.npmjs.org/package/iview)
 [![NPM downloads](http://img.shields.io/npm/dm/iview.svg?style=flat-square)](https://npmjs.org/package/iview)
@@ -21,13 +21,8 @@
 
 ## Docs
 
-### [English (2.0)](https://www.iviewui.com)
-### [中文文档 (2.0)](https://www.iviewui.com)
-[中文文档 (1.0)](http://v1.iviewui.com)
+### [中文文档 (2.x)](https://jackzhcai.github.io/iview-doc-2.x/)
 
-## Overview
-
-### [Component Overview](https://www.iviewui.com/overview)
 
 ## Features
 
@@ -36,19 +31,6 @@
 - Extensive documentation and demos.
 - It is quite beautiful.
 - Supports both Vue.js 2 and Vue.js 1.
-
-## Who's using iView
-
-- [TalkingData](http://www.talkingdata.com/)
-- [Alibaba](http://www.alibaba.com/)
-- [Tencent](https://www.tencent.com/)
-- [JD](http://www.jd.com/)
-- [DiDi](http://www.didichuxing.com/)
-- [Meituan](http://www.meituan.com/)
-- [Sina](http://www.sina.com.cn/)
-- [Lenovo](https://www.lenovo.com.cn/)
-
-> If your company or products use iView, welcome to click [here](https://github.com/iview/iview/issues/2143) to leave a message.
 
 ## Install
 
@@ -104,25 +86,10 @@ import 'iview/dist/styles/iview.css';
 - Supports [Electron](http://electron.atom.io/)
 - iView does not support IE8 or below since [Vue.js](https://vuejs.org/v2/guide/reactivity.html) uses `Object.defineProperty` to track changes which is not supported by these browsers.
 
-## Community
-
-If you want to contribute or have questions or bugs to report:
-
-**Questions:** Find other users at the [Gitter chat](https://gitter.im/iview/iview) or post on [StackOverflow using `[iview-ui]` tag](https://stackoverflow.com/questions/tagged/iview-ui)  
-**Bugs:** [File a issue here](https://github.com/iview/iview/issues) - please provide a example so we can help you better  
-**Contribute:** Contact us in [Gitter chat](https://gitter.im/iview/iview), WeChat or via mail to `admin@aresn.com`. PRs welcome!
-
-## Major Contributors
-|Name|Avatar|Name|Avatar|Name|Avatar|
-|---|---|---|---|---|---|
-|[Aresn](https://github.com/icarusion) |  ![](https://avatars3.githubusercontent.com/u/5370542?v=3&s=60)  |[jingsam](https://github.com/jingsam) |  ![](https://avatars3.githubusercontent.com/u/1522494?v=3&s=60)  | [rijn](https://github.com/rijn)       |  ![](https://avatars2.githubusercontent.com/u/6976367?v=3&s=60)  |
-|[lcx960324](https://github.com/lcx960324)           |  ![](https://avatars3.githubusercontent.com/u/9768245?v=3&s=60)  |[GITleonine1989](https://github.com/GITleonine1989) |  ![](https://avatars1.githubusercontent.com/u/7582490?v=3&s=60)  |[huixisheng](https://github.com/huixisheng)         |  ![](https://avatars1.githubusercontent.com/u/1518967?v=3&s=60)  |
-|[Sergio Crisostomo](https://github.com/SergioCrisostomo)           |  ![](https://avatars3.githubusercontent.com/u/5614559?v=3&s=60)  |  [lison16](https://github.com/lison16)           |  ![](https://avatars3.githubusercontent.com/u/20942571?v=3&s=60) |  [Xotic750](https://github.com/Xotic750)    | ![](https://avatars3.githubusercontent.com/u/216041?v=3&s=60)   | 
-[huanghong1125](https://github.com/huanghong1125) | ![](https://avatars3.githubusercontent.com/u/12794817?v=3&s=60) |
-
 
 ## Ecosystem Links
 
+- [iView](https://github.com/iview/iview)
 - [iView-Admin](https://github.com/iview/iview-admin)
 - [iView-Doc](https://github.com/iview/iview-doc)
 - [iView-Cli](https://github.com/iview/iview-cli)
