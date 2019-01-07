@@ -1,5 +1,5 @@
 {
-    "name": "iview2.x",
+    "name": "iview",
     "version": "2.14.3",
     "title": "iView",
     "description": "A high quality UI components Library with Vue.js",
@@ -48,24 +48,10 @@
         "lodash.throttle": "^4.1.1",
         "popper.js": "^1.14.1",
         "tinycolor2": "^1.4.1",
-        "v-click-outside-x": "^3.0.0",
-        "vue-i18n": "^5.0.3",
-        "clipboard": "^1.7.1",
-        "marked": "^0.3.12",
-        "highlightjs": "^8.7.0"
+        "v-click-outside-x": "^3.0.0"
     },
     "peerDependencies": {
         "vue": "^2.5.2"
-    },
-    "bundledDependencies": {
-        "async-validator": "^1.8.2",
-        "deepmerge": "^2.1.0",
-        "element-resize-detector": "^1.1.14",
-        "js-calendar": "^1.2.3",
-        "lodash.throttle": "^4.1.1",
-        "popper.js": "^1.14.1",
-        "tinycolor2": "^1.4.1",
-        "v-click-outside-x": "^3.0.0"
     },
     "devDependencies": {
         "autoprefixer-loader": "^3.2.0",

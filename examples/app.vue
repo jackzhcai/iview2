@@ -1,133 +1,87 @@
-<style scoped>
-    @import "./styles/common.css";
-    .icon-loading {
-        position: fixed;
-        top: 10px;
-        right: 10px;
-        color: #0099e5;
-        animation: ani-app-loading 1s linear infinite;
-    }
-    @keyframes ani-app-loading {
-        from {
-            transform: rotate(0deg);
-        }
-        50% {
-            transform: rotate(180deg);
-        }
-        to {
-            transform: rotate(360deg);
-        }
-    }
+<style lang="less">
+    @import "../src/styles/index.less";
+</style>
+<style lang="less" scoped>
+nav {
+    margin-bottom: 40px;
+
+    ul { display: flex; flex-wrap: wrap; }
+    li { display: inline-block; }
+    li + li { border-left: solid 1px #bbb; padding-left: 10px; margin-left: 10px; }
+}
+.container{ padding: 10px 40px 0; }
+.v-link-active { color: #bbb; }
 </style>
 <template>
-    <div>
-        <router-view v-if="!loading"></router-view>
-        <Back-top v-if="!loading"></Back-top>
-        <transition name="fade">
-            <div class="loading" v-show="loading">
-                <Icon type="load-c" size="18" class="icon-loading"></Icon>
-            </div>
-        </transition>
+    <div class="container">
+        <nav>
+            <ul>
+                <li><router-link to="/layout">Layout</router-link></li>
+                <li><router-link to="/affix">Affix</router-link></li>
+                <li><router-link to="/grid">Grid</router-link></li>
+                <li><router-link to="/button">Button</router-link></li>
+                <li><router-link to="/input">Input</router-link></li>
+                <li><router-link to="/radio">Radio</router-link></li>
+                <li><router-link to="/checkbox">Checkbox</router-link></li>
+                <li><router-link to="/steps">Steps</router-link></li>
+                <li><router-link to="/timeline">Timeline</router-link></li>
+                <li><router-link to="/switch">Switch</router-link></li>
+                <li><router-link to="/alert">Alert</router-link></li>
+                <li><router-link to="/badge">Badge</router-link></li>
+                <li><router-link to="/tag">Tag</router-link></li>
+                <li><router-link to="/input-number">InputNumber</router-link></li>
+                <li><router-link to="/progress">Progress</router-link></li>
+                <li><router-link to="/upload">Upload</router-link></li>
+                <li><router-link to="/collapse">Collapse</router-link></li>
+                <li><router-link to="/carousel">Carousel</router-link></li>
+                <li><router-link to="/card">Card</router-link></li>
+                <li><router-link to="/tree">Tree</router-link></li>
+                <li><router-link to="/rate">Rate</router-link></li>
+                <li><router-link to="/circle">Circle</router-link></li>
+                <li><router-link to="/tabs">Tabs</router-link></li>
+                <li><router-link to="/tooltip">Tooltip</router-link></li>
+                <li><router-link to="/poptip">Poptip</router-link></li>
+                <li><router-link to="/slider">Slider</router-link></li>
+                <li><router-link to="/dropdown">Dropdown</router-link></li>
+                <li><router-link to="/breadcrumb">Breadcrumb</router-link></li>
+                <li><router-link to="/menu">Menu</router-link></li>
+                <li><router-link to="/spin">Spin</router-link></li>
+                <li><router-link to="/cascader">Cascader</router-link></li>
+                <li><router-link to="/select">Select</router-link></li>
+                <li><router-link to="/backtop">Backtop</router-link></li>
+                <li><router-link to="/page">Page</router-link></li>
+                <li><router-link to="/transfer">Transfer</router-link></li>
+                <li><router-link to="/date">Date</router-link></li>
+                <li><router-link to="/form">Form</router-link></li>
+                <li><router-link to="/table">Table</router-link></li>
+                <li><router-link to="/loading-bar">LoadingBar</router-link></li>
+                <li><router-link to="/modal">Modal</router-link></li>
+                <li><router-link to="/message">Message</router-link></li>
+                <li><router-link to="/notice">Notice</router-link></li>
+                <li><router-link to="/avatar">Avatar</router-link></li>
+                <li><router-link to="/color-picker">ColorPicker</router-link></li>
+                <li><router-link to="/auto-complete">AutoComplete</router-link></li>
+                <li><router-link to="/scroll">Scroll</router-link></li>
+            </ul>
+        </nav>
+        <router-view></router-view>
     </div>
 </template>
 <script>
-    import bus from './components/bus'
-    export default {
-        provide() {
+    module.exports = {
+        data: function() {
             return {
-                app: this
-            }
-        },
-        data() {
-            return {
-                liveVisible: false,
-                iViewVisible: false,
-                lang: this.$lang,
-                fee: true,
-                ad_index: 1 // 随机广告索引，更好地显示一类广告
-            }
-        },
-        computed: {
-            loading () {
-                return bus.loading
-            }
-        },
-        mounted() {
-            // 随机广告索引
-            this.ad_index = Math.floor(Math.random() * 6 + 1)
 
-            this.lang = this.$lang
-            if (window.localStorage.getItem("liveModalTime")) {
-                const time = parseInt(window.localStorage.getItem("liveModalTime"))
-                const today = this.getTodayUnix()
-                if (today - time > 86400000 * 5) this.liveVisible = true
-            } else {
-                this.liveVisible = true
             }
-            if (this.liveVisible && this.$lang === "zh-CN") {
-                //                this.$Notice.config({
-                //                    top: 85
-                //                });
-                //                this.$Notice.info({
-                //                    title: 'iView 近期更新',
-                //                    desc: '由于近期版本更新内容较多，欢迎阅读文章 <a href="https://zhuanlan.zhihu.com/p/34447635" target="_blank">《iView 近期的更新，以及那些“不为人知”的故事》</a> 来详细了解 iView 的更新内容。欢迎点赞、分享。',
-                //                    duration: 0,
-                //                    onClose: () => {
-                //                        const today = this.getTodayUnix();
-                //                        window.localStorage.setItem('liveModalTime', today);
-                //                        this.$Message.success('关闭成功，近期不再提示', 4);
-                //                    }
-                //                });
-                //                this.$Notice.config({
-                //                    top: 24
-                //                });
-            } else if (this.liveVisible && this.$lang === "en-US") {
-                //                this.$Notice.config({
-                //                    top: 85
-                //                });
-                //                this.$Notice.info({
-                //                    title: 'Open source project promotion',
-                //                    desc: '<p><a href="https://github.com/TalkingData/inmap" target="_blank">inMap</a> is a big data visualization library based on Baidu map. It focuses on the scatter, heat map, grid and aggregation algorithm. Make it easy to use.</p><p>Click Star to support the author: <br><a style="vertical-align: middle;display: inline-block" href="https://github.com/TalkingData/inmap" target="_blank"><img src="https://img.shields.io/github/stars/TalkingData/inmap.svg?style=social"></a></p>',
-                //                    duration: 0,
-                //                    onClose: () => {
-                //                        const today = this.getTodayUnix();
-                //                        window.localStorage.setItem('liveModalTime', today);
-                //                        this.$Message.success('Closed successfully, no longer prompt', 4);
-                //                    }
-                //                });
-                //                this.$Notice.config({
-                //                    top: 24
-                //                });
-            }
-            // 广告统计
-            window.clickAdBuy = function() {
-                //   _hmt.push(["_trackEvent", "index-ad-buy", "click"])
-            }
+        },
+        mounted: function() {
 
-            window.clickAdVideo = function() {
-                //   _hmt.push(["_trackEvent", "index-ad-video", "click"])
-            }
+        },
+        beforeDestroy: function() {
+
         },
         methods: {
-            getTodayUnix() {
-                const date = new Date()
-                date.setHours(0)
-                date.setMinutes(0)
-                date.setSeconds(0)
-                date.setMilliseconds(0)
-                return date.getTime()
-            },
-            handleLive() {
-                const today = this.getTodayUnix()
-                window.localStorage.setItem('liveModalTime', today)
-            },
-            feeclose() {
-                this.fee = false
-            },
-            gotofee() {
-                //   _hmt.push(["_trackEvent", "gotofee", "click"])
-                window.open("https://live.bilibili.com/1353202")
-            }
+
         }
     }
 </script>
